@@ -5,10 +5,10 @@
   <ion-content>
     <form ng-submit="saveDevice()">
     <label class="item item-input">
-      <input type="text" placeholder="设备ID">
+      <input type="text" placeholder="设备ID" ng-model="deviceID">
     </label>
     <label class="item item-input">
-      <input type="text" placeholder="设备名称">
+      <input type="text" placeholder="设备名称" ng-model="deviceName">
     </label>
     <button class="button button-full button-calm">保存</button>
   </form>

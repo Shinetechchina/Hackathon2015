@@ -1,5 +1,5 @@
 ﻿//刘民晗
-angular.module('starter.liucontrollers', ["ionic"])
+angular.module('starter.liucontrollers', ["ionic", "services"])
  //左侧菜单
 .controller('appCtrl', function ($scope, $state) {
 })
@@ -7,7 +7,15 @@ angular.module('starter.liucontrollers', ["ionic"])
 .controller('devicesCtrl', function ($scope, $state) {
 })
 //绑定树莓派
-.controller('bindCtrl', function ($scope) {
+.controller('bindCtrl', function ($scope, $state, DeviceCenter) {
+
+    $scope.saveDevice = function() {
+      DeviceCenter.register({id:100,name:"name"}).then(function() {
+        $state.go("familydevices")
+      }, function() {
+        console.log("current error")
+      })
+    }
 })
 //我的树莓派
 .controller('dashboardCtrl', function ($scope) {
