@@ -20,6 +20,7 @@
 	border-radius: 10px;
 	float:left;
 	margin-left:10px;
+	margin-top:10px;
 	background-color:#555;
 }
 .device-item-content {
@@ -37,7 +38,7 @@
 } 
 
 .device-item.active .device-item-content{
-	background-color:#DDD;
+	background-color:#AAA;
 }
 
 .device-item-title{

@@ -63,6 +63,7 @@ angular.module('starter', ['ionic', 'starter.zengcontrollers', 'starter.liucontr
             },
         })
         .state('app.familydevicesshow', {
+            cache: false,
             url: '/familydevicesshow',
             views: {
                 'menuContent': {
@@ -72,6 +73,7 @@ angular.module('starter', ['ionic', 'starter.zengcontrollers', 'starter.liucontr
             },
         })
         .state('app.dashboard', {
+            cache: false,
             url: '/dashboard',
             views: {
                 'menuContent': {
@@ -81,6 +83,7 @@ angular.module('starter', ['ionic', 'starter.zengcontrollers', 'starter.liucontr
             },
         })
         .state('app.dashboardsetting', {
+            cache: false,
             url: '/dashboardsetting',
             views: {
                 'menuContent': {
@@ -90,6 +93,7 @@ angular.module('starter', ['ionic', 'starter.zengcontrollers', 'starter.liucontr
             },
         })
         .state('app.confignew', {
+            cache: false,
             url: '/config/new',
             views: {
                 'menuContent': {

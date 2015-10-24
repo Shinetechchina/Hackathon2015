@@ -42,6 +42,9 @@ angular.module('services', [])
       return http('POST', "/ControlCenters/" + this.token + "/SetConfigActive", {id: deviceId})
     },
     token: "token",
-    familyJson: null
+    familyJson: null,
+    familyDeviceTypes:['电视',
+    '冰箱',
+    "微波炉"]
   }
 })
