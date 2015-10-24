@@ -1,7 +1,7 @@
 ﻿//曾智
 angular.module('starter.zengcontrollers', ["ionic", "services"])
  //绑定家居设备
-.controller('familyDevicesCtrl', function ($scope, DeviceCenter) {
+.controller('familyDevicesCtrl', function ($scope, DeviceCenter, $state) {
   
   $scope.$watch("", function() {
     DeviceCenter.getFamilyDevices().then(function(response) {
