@@ -8,10 +8,15 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
 })
 //绑定树莓派
 .controller('bindCtrl', function ($scope, $state, DeviceCenter) {
+    $scope.device = {
+      id: "",
+      name: ""
+    }
 
     $scope.saveDevice = function() {
-      DeviceCenter.register({id:100,name:"name"}).then(function() {
-        $state.go("familydevices")
+      console.log($scope.device)
+      DeviceCenter.register($scope.device).then(function() {
+        $state.go("app.familydevices")
       }, function() {
         console.log("current error")
       })
