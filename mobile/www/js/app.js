@@ -37,57 +37,57 @@ angular.module('starter', ['ionic', 'starter.zengcontrollers', 'starter.liucontr
             url: '/devices',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/devices.html'
+                    templateUrl: 'templates/devices.html',
+                    controller: 'devicesCtrl'
                 }
             },
-            controller: 'devicesCtrl'
         })
         .state('app.bind', {
             cache: false,
             url: '/bind',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/bind.html'
+                    templateUrl: 'templates/bind.html',
+                    controller: 'bindCtrl'
                 }
             },
-            controller: 'bindCtrl'
         })
         .state('app.familydevices', {
             cache: false,
             url: '/familydevices',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/familyDevices.html'
+                    templateUrl: 'templates/familyDevices.html',
+                    controller: "familyDevicesCtrl"
                 }
             },
-            controller: "familyDevicesCtrl"
         })
         .state('app.familydevicesshow', {
             url: '/familydevicesshow',
             views: {
                 'menuContent': {
-                    templateUrl: "templates/familyDevicesShow.html"
+                    templateUrl: "templates/familyDevicesShow.html",
+                    controller: "familyDevicesShowCtrl"
                 }
             },
-            controller: "familyDevicesShowCtrl"
         })
         .state('app.dashboard', {
             url: '/dashboard',
             views: {
                 'menuContent': {
-                    templateUrl: "templates/dashboard.html"
+                    templateUrl: "templates/dashboard.html",
+                    controller: "dashboardCtrl"
                 }
             },
-            controller: "dashboardCtrl"
         })
         .state('app.dashboardsetting', {
             url: '/dashboardsetting',
             views: {
                 'menuContent': {
-                    templateUrl: "templates/dashboardSetting.html"
+                    templateUrl: "templates/dashboardSetting.html",
+                    controller: "dashboardSettingCtrl"
                 }
             },
-            controller: "dashboardSettingCtrl"
         });
          
 
