@@ -26,15 +26,17 @@ angular.module('starter.zengcontrollers', ["ionic", "services"])
 
   $scope.submit = function (){
 
-    DeviceCenter.
-
-    $state.go('devices-show')
-    // submite items json
-    
+    DeviceCenter.setFamilyDevices($scope.items.devices).then(function(){
+      $state.go('devices-show')
+    })
   }
 })
 
 //已绑定首页
-.controller('familyDevicesShowCtrl', function ($scope) {
-    alert("aaa");
+.controller('familyDevicesShowCtrl', function ($scope, DeviceCenter) {
+  $scope.$watch("", function() {
+    DeviceCenter.getFamilyDevices().then(function(response) {
+      $scope.items = response.data;
+    })
+  })
 })

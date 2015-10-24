@@ -26,7 +26,21 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
 .controller('dashboardCtrl', function ($scope) {
 })
 //定制智能家居
-.controller('dashboardSettingCtrl', function ($scope) {
+.controller('dashboardSettingCtrl', function ($scope, $ionicModal) {
+    $ionicModal.fromTemplateUrl("templates/dashboardSettingModal.html", {
+      scope: $scope,
+      animation: "slide-in-up"
+    }).then(function(modal) {
+      $scope.modal = modal
+    })
+
+    $scope.popSetting = function() {
+      $scope.modal.show()
+    }
+
+    $scope.closeSetting = function() {
+      $scope.modal.close()
+    }
 })
 
 
