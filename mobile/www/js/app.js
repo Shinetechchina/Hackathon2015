@@ -88,6 +88,15 @@ angular.module('starter', ['ionic', 'starter.zengcontrollers', 'starter.liucontr
                     controller: "dashboardSettingCtrl"
                 }
             },
+        })
+        .state('app.confignew', {
+            url: '/config/new',
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/configNew.html",
+                    controller: "configNewCtrl"
+                }
+            },
         });
          
 

@@ -24,6 +24,10 @@ angular.module('starter.zengcontrollers', ["ionic", "services"])
     $scope.selectedItem = item;
   }
 
+  $scope.chooseName = function(item) {
+    $scope.selectedItem = null;
+  };
+
   $scope.submit = function (){
 
     DeviceCenter.setFamilyDevices({devices: $scope.items}).then(function(){
