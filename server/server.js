@@ -5,6 +5,7 @@ DeviceServer.listen(4000, function(){
 });  
 
 
+WebServer.setDeviceServer(DeviceServer);
 WebServer.listen(3000, function(){
   console.log("Web Server listening on port 3000");  
 });  
