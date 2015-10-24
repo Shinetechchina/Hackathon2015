@@ -27,7 +27,7 @@ angular.module('services', [])
       return http("GET", "/ControlCenters/" + this.token, {})
     },
     setFamilyDevices: function(data) {
-      return http("POST", "/ControlCenters" + this.token, data)
+      return http("POST", "/ControlCenters/" + this.token, data)
     },
     // data will be {id: 1 , status: 0}
     setDevice: function(data) {

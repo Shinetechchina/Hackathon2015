@@ -5,7 +5,7 @@ angular.module('starter.zengcontrollers', ["ionic", "services"])
   
   $scope.$watch("", function() {
     DeviceCenter.getFamilyDevices().then(function(response) {
-      $scope.items = response.data;
+      $scope.items = response.data.devices;
     })
   })
 
@@ -26,8 +26,8 @@ angular.module('starter.zengcontrollers', ["ionic", "services"])
 
   $scope.submit = function (){
 
-    DeviceCenter.setFamilyDevices($scope.items.devices).then(function(){
-      $state.go('devices-show')
+    DeviceCenter.setFamilyDevices({devices: $scope.items}).then(function(){
+      $state.go('app.familydevicesshow')
     })
   }
 })
