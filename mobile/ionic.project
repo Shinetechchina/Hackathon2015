@@ -1,4 +1,8 @@
 {
   "name": "CloudMobile",
-  "app_id": ""
+  "app_id": "",
+  "proxies": {
+    "path": "/v1",
+    "proxyUrl": "http://192.168.0.85:3000/v1"
+  }
 }
