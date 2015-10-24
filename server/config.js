@@ -9,6 +9,7 @@ var DATA = {
 
 module.exports.set = function(deviceID,pin,value){
   pin = parseInt(pin,10);
+  if(!pin){ return; }
   if(value == "1"){
     value = 1;
   }else{
