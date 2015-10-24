@@ -3,7 +3,7 @@ angular.module('services', [])
 
 .factory('DeviceCenter', function($http) {
   var http = function(method, url, data) {
-    var hostName = "http://121.199.62.35:3000";
+    var hostName = "/v1";
     var req = {
       method: method,
       url: hostName + url,
