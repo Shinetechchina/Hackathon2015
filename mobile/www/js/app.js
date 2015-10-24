@@ -17,3 +17,15 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+  .state('devices', {
+    url: '/devices',
+    templateUrl: "templates/devices.html"
+  })
+  .state('bind', {
+    url: '/device/bind',
+    templateUrl: "templates/bind.html"
+  })
+  $urlRouterProvider.otherwise('/devices');
+})
