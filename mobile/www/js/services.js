@@ -12,7 +12,7 @@ angular.module('services', [])
       },
       data: data
     };
-    return $http.get("/v1/ControlCenter/sdafds")
+    return $http(req)
   };
 
   return {
