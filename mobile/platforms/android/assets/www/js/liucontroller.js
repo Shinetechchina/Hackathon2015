@@ -17,8 +17,6 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
       console.log($scope.device)
       DeviceCenter.register($scope.device).then(function() {
         $state.go("app.familydevices")
-      }, function(error) {
-        console.log(error)
       })
     }
 })
