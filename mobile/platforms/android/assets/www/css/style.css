@@ -1,1 +1,41 @@
 /* Empty. Add your own CSS if you like */
+
+.family-devices {
+  margin-top: 40px;
+}
+.family-devices .item {
+    background-color: red;
+    margin: 0 10px;
+    height: 50px;
+  }
+
+.family-devices .item:hover {
+  background-color: darkred;  
+}
+
+.family-devices .item.active {
+  background-color: green;
+}
+.device-item{
+	border-radius: 10px;
+	float:left;
+	margin-left:10px;
+	background-color:rgb(110,​ 255,​ 254);
+}
+.device-item-content {
+	height:100px;
+	width:100px;
+	line-height:100px;
+	text-align:center;
+	text-decoration:none;
+	color:red; 
+	border:1px solid #777;
+}
+.device-item-content.active{
+	border:1px solid rgb(110,​ 255,​ 254);
+}
+
+.device-item-title{
+	color:#777;font-size:0.8em;
+	/*border-top:1px solid gray*/
+}

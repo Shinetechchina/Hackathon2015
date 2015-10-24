@@ -1,0 +1,22 @@
+<ion-view title="绑定智能家居">
+     
+  <ion-content class="has-header">
+    <div class="family-devices">
+      <div class="row">
+        <div class="col item" ng-repeat="item in items" ng-click="addDevice(item);">{{item.name}}</div>
+      </div>
+    </div>
+    <div class="list" ng-show="showPreDefinedDevices">
+      <label class="item item-radio" ng-repeat="item in preDefinedDevices">
+        <input type="radio" name="group" ng-model="selectedItem.name" ng-value="item">
+        <div class="item-content">
+          {{item}}
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+    </div>
+  </ion-content>
+</ion-view>
+<div class="bar bar-footer bar-balanced">
+  <div class="title" ng-click="submit();">提交</div>
+</div>

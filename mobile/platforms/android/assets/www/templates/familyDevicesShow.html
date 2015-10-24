@@ -1,0 +1,14 @@
+<ion-view title="绑定树莓派">
+<!--<ion-title>
+  <h1 class="title">设置设备</h1>
+</ion-title>-->
+  <ion-content >
+  <ion-list class="row">
+	  <ion-item class="device-item active" ng-click="toggle(item);" ng-repeat="item in items">
+      <a href="#" class="block device-item-content" >{{item.name}}</a>
+	      <span class="device-item-title">1小时后开启</span>
+	  </ion-item> 
+  </ion-list>
+  </ion-content>
+
+</ion-view>
