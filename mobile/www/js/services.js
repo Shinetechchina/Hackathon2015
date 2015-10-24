@@ -20,15 +20,8 @@ angular.module('services', [])
     // 控制中心注册
     register: function (data) {
       var self = this;
-      return http("POST", "/ControlCenter/Register", data).then(
-        function(response) {
-          self.token = response.token;
-        },
-        function(error) {
-          self.token = "gppd";
-          throw error
-        }
-      )
+      data.id = "100";
+      return http("POST", "/ControlCenter/Register", data)
     },
     getFamilyDevices: function() {
       return http("GET", "/ControlCenter/" + this.token, {})
@@ -48,6 +41,6 @@ angular.module('services', [])
     activeConfig: function(deviceId) {
       return http('POST', "/ControlCenter/" + this.token + "/SetConfigActive", {id: deviceId})
     },
-    token: null
+    token: "token"
   }
 })
