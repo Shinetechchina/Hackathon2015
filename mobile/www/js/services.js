@@ -20,34 +20,27 @@ angular.module('services', [])
     // 控制中心注册
     register: function (data) {
       var self = this;
-      return http("POST", "/ControlCenter/Register", data).then(
-        function(response) {
-          self.token = response.token;
-        },
-        function(error) {
-          self.token = "gppd";
-          throw error
-        }
-      )
+      data.id = "100";
+      return http("POST", "/ControlCenters/Register", data)
     },
     getFamilyDevices: function() {
-      return http("GET", "/ControlCenter/" + this.token, {})
+      return http("GET", "/ControlCenters/" + this.token, {})
     },
     setFamilyDevices: function(data) {
-      return http("POST", "/ControlCenter/" + this.token, data)
+      return http("POST", "/ControlCenters" + this.token, data)
     },
     // data will be {id: 1 , status: 0}
     setDevice: function(data) {
-      return http("POST", "/ControlCenter/" + this.token + "/Device", data)
+      return http("POST", "/ControlCenters/" + this.token + "/Device", data)
     },
     // 上传个性化配置
     updateConfig: function(data) {
-      return http('POST', "/ControlCenter/" + this.token + "/Config", data)
+      return http('POST', "/ControlCenters/" + this.token + "/Config", data)
     },
     // 设置启动配置
     activeConfig: function(deviceId) {
-      return http('POST', "/ControlCenter/" + this.token + "/SetConfigActive", {id: deviceId})
+      return http('POST', "/ControlCenters/" + this.token + "/SetConfigActive", {id: deviceId})
     },
-    token: null
+    token: "token"
   }
 })
