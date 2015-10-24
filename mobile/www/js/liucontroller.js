@@ -23,7 +23,10 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
     }
 })
 //我的树莓派
-.controller('dashboardCtrl', function ($scope) {
+.controller('dashboardCtrl', function ($scope, DeviceCenter) {
+    DeviceCenter.getFamilyDevices().then(function(response) {
+      $scope.device = response.data.name
+    })
 })
 //定制智能家居
 .controller('dashboardSettingCtrl', function ($scope, $ionicModal) {
