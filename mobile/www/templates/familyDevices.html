@@ -1,8 +1,14 @@
 <ion-view title="绑定智能家居">
   <ion-content class="has-header">
-    <div class="family-devices">
+    <div >
       <div class="row">
-        <div class="col item" ng-repeat="item in items" ng-click="addDevice(item);" ng-class="{active: selectedItem == item}">{{item.name}}</div>
+        <ion-list>
+          <ion-item  class="device-item" ng-class=" {active: selectedItem == item}" ng-click="addDevice(item);" ng-repeat="item in items" >
+            <a href="#" class="block device-item-content" >
+              <img ng-src='{{item.name|deviceImg:1}}'/><span>{{item.name}}</span></a> 
+          </ion-item> 
+        </ion-list>
+       <!--  <div class="col item" ng-repeat="item in items" ng-click="addDevice(item);" ng-class="{active: selectedItem == item}">{{item.name}}</div> -->
       </div>
     </div>
     <div class="list" ng-show="!!selectedItem">

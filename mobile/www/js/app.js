@@ -135,4 +135,16 @@ angular.module('starter', ['ionic', 'starter.zengcontrollers', 'starter.liucontr
     //});
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/devices');
+})
+.filter("deviceImg",function(DeviceCenter){
+    return function(img,status){
+        var open=status==1?"on":"off";
+        for(var i =0;i<DeviceCenter.familyDeviceTypes.length;i++){
+            if(DeviceCenter.familyDeviceTypes[i]==img){
+                console.log('img/'+i+"_"+open+".png");
+                return 'img/'+i+"_"+open+".png";
+            }
+        }
+        return "img/no_setting.png";
+    }
 }); 
