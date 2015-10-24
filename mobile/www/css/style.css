@@ -37,5 +37,10 @@
 
 .device-item-title{
 	color:#777;font-size:0.8em;
-	/*border-top:1px solid gray*/
+	display:block;
+	line-height:2em;
+/*	border:1px solid gray*/
 }
+.device-item-title img{
+	height:2em;vertical-align: middle;
+} 
