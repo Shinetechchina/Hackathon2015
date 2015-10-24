@@ -60,7 +60,7 @@ client.connect(PORT, HOST, function() {
   register(client);
 setInterval(function(){
   client.write("heartbeat\n")
-},1 * 60 * 1000 );
+},30 * 1000 );
   client.on('data',function(data){
     var lines = data.toString().toLowerCase().trim().split("\n");
     for(var i = 0; i < lines.length; i++){
