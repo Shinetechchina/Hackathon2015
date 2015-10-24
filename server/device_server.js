@@ -12,6 +12,8 @@ Commands.register = function(sock,values){
   }
 }
 
+Commands.heartbeat = function(sock,values){
+}
 Commands.set = function(sock,values){
     if(values.length == 3){
       config.set(sock.deviceID || config.DEFAULT_DEVICE_ID,values[1],values[2],true);
@@ -24,6 +26,10 @@ Commands.get = function(sock,values){
 var app = net.createServer();
 app.on('connection', function(sock) {
   console.log("new connection");
+  sock.on('error', function(ex) {
+      console.log("handled error");
+      console.log(ex);
+  });
   sock.on('data', function(data) {
     var lines = data.toString().toLowerCase().trim().split("\n");
     for(var i = 0; i < lines.length; i++){

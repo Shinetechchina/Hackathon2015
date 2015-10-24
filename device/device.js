@@ -38,7 +38,9 @@ var setStatus = function(client,pin,value){
   STATUS[pin] = value;
   gpio.open(pin, "output",function(){
     var v = (value === 1) ? ON : OFF;
-    client.write(["set",pin,'' + value + "\n" ].join(","));
+    gpio.write(pin,v,function(){
+      client.write(["set",pin,'' + value + "\n" ].join(","));
+    });
   });
 }
 
@@ -56,6 +58,9 @@ var client = new net.Socket();
 client.connect(PORT, HOST, function() {
   console.log('CONNECTED to Server');
   register(client);
+setInterval(function(){
+  client.write("heartbeat\n")
+},30 * 1000 );
   client.on('data',function(data){
     var lines = data.toString().toLowerCase().trim().split("\n");
     for(var i = 0; i < lines.length; i++){
