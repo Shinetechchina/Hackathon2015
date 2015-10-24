@@ -1,0 +1,97 @@
+#s-68f37fa8-5b1a-4ab1-9435-3d712f014024 > #backgroundBox {
+  background-color: transparent;
+  background-image: none;
+  position: absolute;
+}
+#s-68f37fa8-5b1a-4ab1-9435-3d712f014024 > #alignmentBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#s-68f37fa8-5b1a-4ab1-9435-3d712f014024 #s-Rectangle_1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 375px;
+  height: 667px;
+  background-color: #FFFFFF;
+  background-image: none;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+  box-shadow: none;
+  text-shadow: none;
+  font-size: 12.0pt;
+  font-family: Roboto-Bold,Arial;
+}
+#s-68f37fa8-5b1a-4ab1-9435-3d712f014024 #s-Rectangle_1 .valign {
+  vertical-align: middle;
+  text-align: center;
+}
+#s-68f37fa8-5b1a-4ab1-9435-3d712f014024 #s-Rectangle_1 span {
+  color: #1174C1;
+  text-align: center;
+  text-decoration: none;
+  font-family: Roboto-Bold,Arial;
+  font-size: 12.0pt;
+}
+#s-68f37fa8-5b1a-4ab1-9435-3d712f014024 #s-Rectangle_1 span#rtr-s-Rectangle_1_0 {
+  color: #1174C1;
+  text-align: center;
+  text-decoration: none;
+  font-family: Roboto-Bold,Arial;
+  font-size: 12.0pt;
+  line-height: 0px;
+}
+#s-68f37fa8-5b1a-4ab1-9435-3d712f014024 #s-Image_4 {
+  position: absolute;
+  top: 91px;
+  left: 113px;
+  width: 150px;
+  height: 150px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+  box-shadow: none;
+}
+#s-68f37fa8-5b1a-4ab1-9435-3d712f014024 #s-Image_2 {
+  position: absolute;
+  top: 413px;
+  left: 178px;
+  width: 21px;
+  height: 20px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+  box-shadow: none;
+}
+#s-68f37fa8-5b1a-4ab1-9435-3d712f014024 #s-Label_1 {
+  position: absolute;
+  top: 277px;
+  left: 117px;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  background-image: none;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+  box-shadow: none;
+  text-shadow: none;
+  color: #404040;
+  text-align: left;
+  text-decoration: none;
+  font-family: Roboto-Regular,Arial;
+  font-size: 18.0pt;
+}
+#s-68f37fa8-5b1a-4ab1-9435-3d712f014024 #s-Label_1 .valign {
+  vertical-align: middle;
+}
+.ui-page {
+  overflow-x: hidden;
+}
+#s-68f37fa8-5b1a-4ab1-9435-3d712f014024 > #loadMark {
+  width: 1px;
+  visibility: hidden;
+  display: none;
+}
