@@ -3,14 +3,14 @@
   <h1 class="title">设置设备</h1>
 </ion-title>-->
   <ion-content>
-    <form ng-submit="saveDevice()">
+    <form>
     <label class="item item-input">
-      <input type="text" placeholder="设备ID" ng-model="deviceID">
+      <input type="text" placeholder="设备ID" ng-model="device.id">
     </label>
     <label class="item item-input">
-      <input type="text" placeholder="设备名称" ng-model="deviceName">
+      <input type="text" placeholder="设备名称" ng-model="device.name">
     </label>
-    <button class="button button-full button-calm">保存</button>
+    <button class="button button-full button-calm" ng-click="saveDevice()">保存</button>
   </form>
   </ion-content>
 </ion-view>
