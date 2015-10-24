@@ -16,7 +16,7 @@ angular.module('starter.zengcontrollers', ["ionic", "services"])
   $scope.preDefinedDevices = [
     '空调',
     '电脑',
-    ""
+    "冰箱"
   ]
 
   $scope.addDevice = function(item) {
@@ -36,7 +36,16 @@ angular.module('starter.zengcontrollers', ["ionic", "services"])
 .controller('familyDevicesShowCtrl', function ($scope, DeviceCenter) {
   $scope.$watch("", function() {
     DeviceCenter.getFamilyDevices().then(function(response) {
-      $scope.items = response.data;
+      $scope.items = response.data.devices;
     })
   })
+
+  $scope.toggle = function(item) {
+    if (Number(item.status) === 0) {
+      item.status = 1
+    } else {
+      item.status = 0
+    }
+    DeviceCenter.setDevice(item)
+  }
 })
