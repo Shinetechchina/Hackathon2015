@@ -1,37 +1,36 @@
-var DEFAULT_DEVICE_ID = "xxx";
+var DEFAULT_DEVICE_ID = "100";
 var DATA = {
-  "xxx" : {
-    "devices" : [
-      ]
-  }
 }
 
 
-module.exports.set = function(deviceID,pin,value){
+module.exports.set = function(deviceID,pin,value,force){
+  deviceID = deviceID.toString();
   pin = parseInt(pin,10);
+  if(!pin){ return; }
   if(value == "1"){
     value = 1;
   }else{
     value = 0;
   }
-  DATA[deviceID] = DATA[deviceID] || {};
-  DATA[deviceID]["devices"] = DATA[deviceID]["devices"] || [];
-  var devices = DATA[deviceID]["devices"];
+  DATA[deviceID] = DATA[deviceID] || [];
+  var devices = DATA[deviceID];
   for(var i = 0; i < devices.length; i++){
     if(devices[i] && devices[i].id == pin){
       devices[i].status = value
       return;
     }
   }
-  var device = {};
-  device.status = value;
-  device.id = pin;
-  devices.push(device);
+  if(force){
+    var device = {};
+    device.status = value;
+    device.id = pin;
+    devices.push(device);
+  }
 };
 
 module.exports.get = function(deviceID){
-  DATA[deviceID] = DATA[deviceID] || {};
-  DATA[deviceID]["devices"] = DATA[deviceID]["devices"] || [];
+  deviceID = deviceID.toString();
+  DATA[deviceID] = DATA[deviceID] || []
   return DATA[deviceID];
 };
 module.exports.DEFAULT_DEVICE_ID = DEFAULT_DEVICE_ID;

@@ -1,1 +1,18 @@
 /* Empty. Add your own CSS if you like */
+
+.family-devices {
+  margin-top: 40px;
+}
+.family-devices .item {
+    background-color: red;
+    margin: 0 10px;
+    height: 50px;
+  }
+
+.family-devices .item:hover {
+  background-color: darkred;  
+}
+
+.family-devices .item.active {
+  background-color: green;
+}
