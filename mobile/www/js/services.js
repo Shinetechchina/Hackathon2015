@@ -21,25 +21,25 @@ angular.module('services', [])
     register: function (data) {
       var self = this;
       data.id = "100";
-      return http("POST", "/ControlCenter/Register", data)
+      return http("POST", "/ControlCenters/Register", data)
     },
     getFamilyDevices: function() {
-      return http("GET", "/ControlCenter/" + this.token, {})
+      return http("GET", "/ControlCenters/" + this.token, {})
     },
     setFamilyDevices: function(data) {
-      return http("POST", "/ControlCenter/" + this.token, data)
+      return http("POST", "/ControlCenters" + this.token, data)
     },
     // data will be {id: 1 , status: 0}
     setDevice: function(data) {
-      return http("POST", "/ControlCenter/" + this.token + "/Device", data)
+      return http("POST", "/ControlCenters/" + this.token + "/Device", data)
     },
     // 上传个性化配置
     updateConfig: function(data) {
-      return http('POST', "/ControlCenter/" + this.token + "/Config", data)
+      return http('POST', "/ControlCenters/" + this.token + "/Config", data)
     },
     // 设置启动配置
     activeConfig: function(deviceId) {
-      return http('POST', "/ControlCenter/" + this.token + "/SetConfigActive", {id: deviceId})
+      return http('POST', "/ControlCenters/" + this.token + "/SetConfigActive", {id: deviceId})
     },
     token: "token"
   }
