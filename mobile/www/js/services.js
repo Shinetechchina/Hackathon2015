@@ -41,6 +41,7 @@ angular.module('services', [])
     activeConfig: function(deviceId) {
       return http('POST', "/ControlCenters/" + this.token + "/SetConfigActive", {id: deviceId})
     },
-    token: "token"
+    token: "token",
+    familyJson: null
   }
 })
