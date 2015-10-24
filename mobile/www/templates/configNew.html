@@ -1,0 +1,27 @@
+<ion-view title="添加新策略">
+    <ion-header-bar class="bar-calm">
+      <h1 class="title"></h1>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-divider ">
+                <!-- <i class="icon ion-ios-checkmark-empty"></i> -->
+                <label class="item item-input">
+                <span class="input-label">名称</span>
+                <input type="text">
+                </label>
+                <!-- <input type="text" class="block" ng-model="config.name" placeholder="新名称"> -->
+            </ion-item>
+            <ion-item ng-repeat="device in deviceSettings" ng-click="popSetting(device);">{{device.name}}
+            <span style="font-size:12px;color:#999;"> {{getDescription(device)}}</span>
+        </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>
+<div class="bar bar-footer bar-balanced">
+   <!--  <button class="button button-full button-positive" ng-click="submit();">
+    提交
+</button> -->
+  <div class="title" ng-click="submit();">提交</div>
+</div>

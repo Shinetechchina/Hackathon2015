@@ -1,12 +1,11 @@
-<ion-view>
-  <ion-header-bar class="bar-calm">
-    <h1 class="title">我的树莓派</h1>
-  </ion-header-bar>
-  <ion-content>
-    <ion-list>
-      <ion-item ui-sref="dashboard-setting">我的家庭</ion-item>
-      <ion-item>我的办公室</ion-item>
-      <ion-item>我的公寓</ion-item>
-    </ion-list>
-  </ion-content>
+<ion-view title="我的智能盒子">
+
+    <ion-content>
+        <ion-list>
+            <ion-item class="item item-icon-right" href="#/app/dashboardsetting">
+                <i class="icon ion-ios-arrow-right"></i>
+                {{device}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
 </ion-view>
