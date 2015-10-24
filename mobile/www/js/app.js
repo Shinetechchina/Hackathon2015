@@ -25,7 +25,8 @@ angular.module('starter', ['ionic'])
   })
   .state('bind', {
     url: '/device/bind',
-    templateUrl: "templates/bind.html"
+    templateUrl: "templates/bind.html",
+    controller: "BindDeviceController"
   })
   $urlRouterProvider.otherwise('/devices');
 })
