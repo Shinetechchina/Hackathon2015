@@ -26,6 +26,7 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
       $scope.device = response.data.name
     })
 })
+
 //定制智能家居
 .controller('dashboardSettingCtrl', function ($scope, $ionicModal, DeviceCenter) {
     $scope.$watch("", function() {
@@ -35,6 +36,22 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
       })
     }
     );
+
+    $scope.str2time = function(str) {
+      if (typeof str == 'undefined') {
+        return str
+      }
+      if (typeof str == 'Date') {
+        return date
+      }
+      split = str.split(":");
+      var date = new Date();
+      date.setHours(split[0]);
+      date.setMinutes(split[1]);
+      return date
+    }
+    $scope.currentDevice = null;
+    $scope.config = null;
     $ionicModal.fromTemplateUrl("templates/dashboardSettingModal.html", {
       scope: $scope,
       animation: "slide-in-up"
@@ -42,12 +59,76 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
       $scope.modal = modal
     })
 
-    $scope.popSetting = function() {
+    $scope.popSetting = function(device, config) {
+      if (Number(device.model) === 1) {
+        device.startTime = $scope.str2time(device.startTime);
+        device.endTime = $scope.str2time(device.endTime);
+      }
+      // debugger
+      // angular.forEach(config.deviceSettings, function(setting) {
+      //   if (Number(setting.model) === 1) {
+      //     setting.startTime = $scope.str2time(setting.startTime);
+      //     setting.endTime = $scope.str2time(setting.endTime);
+      //   }
+      // })
+
       $scope.modal.show()
+      $scope.currentDevice = device;
+      $scope.config = config;
     }
 
     $scope.closeSetting = function() {
-      $scope.modal.close()
+      $scope.submit()
+    }
+
+    $scope.getDescription=function(device){
+      //alert(device.model);
+      switch(+device.model){
+        case 0:
+          return "手动";
+        case 1:
+          // console.log(device);
+          if(device.startTime==null||device.startTime==undefined||device.startTime=="") return "自动";
+        if(device.endTime==null||device.endTime==undefined||device.endTime=="") return "自动";
+        var start, end;
+        if (typeof device.startTime == 'string') {
+          start = device.startTime;
+        } else {
+          var starth= device.startTime.getHours();
+          var startm= device.startTime.getMinutes();
+          start = starth + ":" + startm;
+        }
+        if (typeof device.endTime == 'string') {
+          end = device.endTime;
+        } else {
+          var endh= device.endTime.getHours();
+          var endm= device.endTime.getMinutes();
+          end = endh + ":" + endm;
+        }
+        return start +"开启"+" "+end+"关闭";
+        return "自动";
+        case 2:
+          return "距离感知";
+        default:
+          return "";
+      }
+    }
+
+    $scope.submit = function() {
+      if (Number($scope.currentDevice.model) === 1) {
+        sh = $scope.currentDevice.startTime.getHours();
+        sm = $scope.currentDevice.startTime.getMinutes();
+        eh = $scope.currentDevice.endTime.getHours();
+        em = $scope.currentDevice.endTime.getMinutes();
+
+        $scope.currentDevice.startTime = sh + ":" + sm;
+        $scope.currentDevice.endTime = eh + ":" + em;
+      }
+      DeviceCenter.updateConfig({config: $scope.config}).then(function(){
+        // $state.go('app.dashboardsetting')
+        $scope.modal.hide();
+      })
+      $scope.currentDevice = null
     }
 })
 
@@ -66,8 +147,10 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
 
         $scope.config = {
           "id": $scope.configLength,
-          "deviceSettings": $scope.deviceSettings
+          "deviceSettings": $scope.deviceSettings,
         };
+
+        $scope.time2str = function(){};
 
         $scope.getDescription=function(device){
           //alert(device.model);
@@ -138,7 +221,16 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
     }
 
     $scope.closeSetting = function() {
-       
+      if (Number($scope.currentDevice.model) === 1) {
+        sh = $scope.currentDevice.startTime.getHours();
+        sm = $scope.currentDevice.startTime.getMinutes();
+        eh = $scope.currentDevice.endTime.getHours();
+        em = $scope.currentDevice.endTime.getMinutes();
+
+        $scope.currentDevice.startTime = sh + ":" + sm;
+        $scope.currentDevice.endTime = eh + ":" + em;
+      }
+      $scope.submit();
       // if($scope.currentDevice==null||$scope.currentDevice==undefined)return;
       //  console.log($scope.currentDevice);
       // if(+$scope.currentDevice.model==1){ //如果是手动的话
@@ -160,6 +252,7 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
       // alert("closeSetting4");
       $scope.currentDevice = null;
     } 
+
     $scope.submit = function() {
       DeviceCenter.updateConfig({config: $scope.config}).then(function(){
         $state.go('app.dashboardsetting')
