@@ -10,6 +10,9 @@
 * [曾智](https://github.com/cursorzz)
 * [刘民晗](https://github.com/liujavamail)
 
+##产品结构
+![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/0.jpg)
+
 ##功能描述
 
 ###智能盒子
@@ -32,5 +35,5 @@
 ![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/3.png)
 ![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/4.png)
 ![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/5.png)
-![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/6.jpg)
 ![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/7.jpg)
+![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/6.jpg)
