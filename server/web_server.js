@@ -196,10 +196,12 @@ setInterval(function(){
 					var minNow = dateNow.getMinutes();
 					if(deviceConfig.startTime == hourNow + ':' + minNow){
 						config.set(memoryDB.ControlCenters[i].id,deviceConfig.id,1);
+						deviceServer.sendCommand(memoryDB.ControlCenters[i].id,deviceConfig.id,1);
 						}
 						
 					if(deviceConfig.endTime == hourNow + ':' + minNow){
 						config.set(memoryDB.ControlCenters[i].id,deviceConfig.id,0);
+						deviceServer.sendCommand(memoryDB.ControlCenters[i].id,deviceConfig.id,0);
 						}
 					
 					}

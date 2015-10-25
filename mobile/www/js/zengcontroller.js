@@ -34,7 +34,7 @@ angular.module('starter.zengcontrollers', ["ionic", "services"])
 })
 
 //已绑定首页
-.controller('familyDevicesShowCtrl', function ($scope, DeviceCenter,$ionicHistory) {
+.controller('familyDevicesShowCtrl', function ($scope, DeviceCenter,$ionicHistory,$state) {
   $scope.$watch("", function() {
     DeviceCenter.getFamilyDevices().then(function(response) {
       $scope.items = response.data.devices;
@@ -48,5 +48,8 @@ angular.module('starter.zengcontrollers', ["ionic", "services"])
       item.status = 0
     }
     DeviceCenter.setDevice(item)
-  }
+  };
+   $scope.goBind=function(){
+      $state.go("app.bind");
+    };
 })
