@@ -134,7 +134,7 @@ angular.module('starter', ['ionic', 'starter.zengcontrollers', 'starter.liucontr
     //    }
     //});
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/devices');
+    $urlRouterProvider.otherwise('/app/familydevices');
 })
 .filter("deviceImg",function(DeviceCenter){
     return function(img,status){
