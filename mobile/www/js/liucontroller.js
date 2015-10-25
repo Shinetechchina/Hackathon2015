@@ -19,6 +19,7 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
         $state.go("app.familydevices")
       })
     }
+   
 })
 //我的树莓派
 .controller('dashboardCtrl', function ($scope, DeviceCenter) {
