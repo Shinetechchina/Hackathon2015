@@ -34,6 +34,8 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
       DeviceCenter.getFamilyDevices().then(function(response) {
         $scope.configs = response.data.configs;
         $scope.devices = response.data.devices;
+
+        $scope.activeId = null
       })
     }
     );
@@ -155,56 +157,37 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
 
         $scope.getDescription=function(device){
           //alert(device.model);
+          //
           switch(+device.model){
             case 0:
               return "手动";
             case 1:
-               // console.log(device);
-               if(device.startTime==null||device.startTime==undefined||device.startTime=="") return "自动";
-               if(device.endTime==null||device.endTime==undefined||device.endTime=="") return "自动";
-               var starth= device.startTime.getHours();
-               var endh= device.endTime.getHours();
-               var startm= device.startTime.getMinutes();
-               var endm= device.endTime.getMinutes();
-               // var nowh=new Date().getHours();
-               // var nowm=new Date().getMinutes();
-               return starth+":"+startm+"开启"+" "+endh+":"+endm+"关闭";
-               //以下的算法是如果只需要换按现在的时间计算紧接着的预告
-               // if(starth<endh){ //10:00开启   18：00 关闭
-               //    if(nowh>=starth&&nowh<endh){
-               //        return endh+":"+endm+"关闭";
-               //    }else{
-               //        return starth+":"+startm+"开启";
-               //    }
-               // }else if(starth>endh){            //   18:00 开启   10：00关闭
-               //    if(nowh>=endh&&nowh<starth){
-               //        return starth+":"+startm+"开启";
-               //    }else{
-               //        return endh+":"+endm+"关闭";
-               //    }
-               // }else{
-               //    if(startm<endm){
-               //        if(nowm>=startm&&nowm<endm){
-               //            return endh+":"+endm+"关闭";
-               //        }else{
-               //            return starth+":"+startm+"开启";
-               //        }
-               //    }else{
-               //       if(nowh>=endm&&nowh<startm){
-               //          return starth+":"+startm+"开启";
-               //        }else{
-               //            return endh+":"+endm+"关闭";
-               //        }
-               //    }
-               // }
-              return "自动";
+              // console.log(device);
+              if(device.startTime==null||device.startTime==undefined||device.startTime=="") return "自动";
+            if(device.endTime==null||device.endTime==undefined||device.endTime=="") return "自动";
+            var start, end;
+            if (typeof device.startTime == 'string') {
+              start = device.startTime;
+            } else {
+              var starth= device.startTime.getHours();
+              var startm= device.startTime.getMinutes();
+              start = starth + ":" + startm;
+            }
+            if (typeof device.endTime == 'string') {
+              end = device.endTime;
+            } else {
+              var endh= device.endTime.getHours();
+              var endm= device.endTime.getMinutes();
+              end = endh + ":" + endm;
+            }
+            return start +"开启"+" "+end+"关闭";
+            return "自动";
             case 2:
               return "距离感知";
             default:
               return "";
           }
         }
-
       })
     }
     );
@@ -231,7 +214,6 @@ angular.module('starter.liucontrollers', ["ionic", "services"])
         $scope.currentDevice.startTime = sh + ":" + sm;
         $scope.currentDevice.endTime = eh + ":" + em;
       }
-      $scope.submit();
       // if($scope.currentDevice==null||$scope.currentDevice==undefined)return;
       //  console.log($scope.currentDevice);
       // if(+$scope.currentDevice.model==1){ //如果是手动的话
