@@ -30,10 +30,10 @@
 * 通过GPS 信息，控制设备的状态  （当手机远离房间的时候， 自动关闭室内的灯)
   
 ##产品预览
-![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/1.png =200x340)
-![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/2.png =200)
-![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/3.png =200)
-![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/4.png =200)
-![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/5.png =200)
-![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/7.jpg =200)
-![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/6.jpg =200)
+![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/1.png)
+![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/2.png)
+![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/3.png)
+![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/4.png)
+![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/5.png)
+![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/7.jpg)
+![image](https://raw.githubusercontent.com/Shinetechchina/Hackathon2015/master/doc/images/6.jpg)
